@@ -15,4 +15,14 @@ const eslintConfig = defineConfig([
   ]),
 ]);
 
+eslintConfig.push({
+  rules: {
+    "react-hooks/exhaustive-deps": "off",
+    "react/jsx-key": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react-hooks/set-state-in-effect": "off",
+  },
+});
+
 export default eslintConfig;

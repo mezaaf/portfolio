@@ -1,16 +1,19 @@
 "use client";
-import { Code2Icon, CloudDownload } from "lucide-react";
-import { Button } from "../ui/button";
+import { useMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
+import { CloudDownload, Code2Icon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { useMobile } from "@/hooks/use-mobile";
+import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   const { isExtraSmallScreen, isSmallScreen } = useMobile();
 
+  useEffect(() => setMounted(true), []);
   return (
     <nav className="w-full sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center bg-accent-foreground border-b border-primary">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -44,7 +47,9 @@ const Navbar = () => {
           })}
         </div>
         <Button
-          size={isSmallScreen || isExtraSmallScreen ? "sm" : "default"}
+          size={
+            mounted && (isSmallScreen || isExtraSmallScreen) ? "sm" : "default"
+          }
           className="font-semibold text-xs md:text-sm"
         >
           <CloudDownload />
