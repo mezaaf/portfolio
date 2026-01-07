@@ -1,29 +1,20 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import { Anton } from "next/font/google";
-import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
-
-const anton = Anton({
-  variable: "--font-anton",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const HeroSection = () => {
   return (
     <section className="w-full">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center min-h-[75vh]">
-        <p className="">Hello there!👋, I&apos;m a Fullstack Developer</p>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center min-h-[90vh]">
+        <p className="">Hello there!👋, I&apos;m a Web Developer</p>
         <h1
           className={cn(
-            "relative text-center text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-12 sm:leading-16 lg:leading-20 text-primary",
-            anton.className
+            "relative text-center text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-12 sm:leading-16 lg:leading-20 tracking-tighter text-primary"
           )}
         >
-          TRANSFORMING <br /> <span className="text-accent">IDEAS</span> INTO
-          REAL <span className="text-accent">WORLD</span> <br />
+          TRANSFORMING <br /> IDEAS INTO REAL WORLD <br />
           <span className="flex items-center justify-center gap-4">
             <div className="h-10 md:h-16 aspect-square overflow-hidden bg-primary rotate-8 rounded-tr-xl rounded-bl-md">
               <Image

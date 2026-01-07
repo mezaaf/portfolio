@@ -15,7 +15,7 @@ const Navbar = () => {
 
   useEffect(() => setMounted(true), []);
   return (
-    <nav className="w-full sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center bg-accent-foreground border-b border-primary">
+    <nav className="w-full z-10 sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center border-b border-primary backdrop-blur-3xl">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link href={"/"} className="flex items-center gap-2">
           <span className="bg-primary rounded-full p-1">
@@ -69,14 +69,14 @@ const navItems = [
   },
   {
     name: "ABOUT",
-    href: "/about",
+    href: "#about",
   },
   {
     name: "PROJECT",
-    href: "/project",
+    href: "#project",
   },
   {
     name: "CONTACT",
-    href: "/contact",
+    href: "#contact",
   },
 ];
