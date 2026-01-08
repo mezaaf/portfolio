@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   Field,
   FieldError,
@@ -8,12 +9,15 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Controller, useForm } from "react-hook-form";
+import { Loader, SendHorizonalIcon } from "lucide-react";
+import { Controller } from "react-hook-form";
+import { useContactForm } from "../hooks/useContactForm";
 
 const ContactForm = () => {
-  const form = useForm();
+  const { isLoading, onSubmit, form } = useContactForm();
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <FieldGroup>
         <Controller
           name="name"
@@ -57,13 +61,27 @@ const ContactForm = () => {
               <Textarea
                 id="message"
                 placeholder="Write your message..."
-                className="min-h-[200px]"
+                className="min-h-[100px]"
                 {...field}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
         />
+        <Field>
+          <Button disabled={isLoading} className="w-fit! group">
+            {isLoading ? (
+              <>
+                <Loader className="animate-spin" /> Sending...
+              </>
+            ) : (
+              <>
+                Send Now{" "}
+                <SendHorizonalIcon className="group-hover:-rotate-45 transition-transform duration-300 ease-in-out" />
+              </>
+            )}
+          </Button>
+        </Field>
       </FieldGroup>
     </form>
   );
