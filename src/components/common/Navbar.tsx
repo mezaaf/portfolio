@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import ThemeToggle from "../shared/ThemeToggle";
 
 const Navbar = () => {
   const [mounted, setMounted] = useState(false);
@@ -46,15 +47,20 @@ const Navbar = () => {
             );
           })}
         </div>
-        <Button
-          size={
-            mounted && (isSmallScreen || isExtraSmallScreen) ? "sm" : "default"
-          }
-          className="font-semibold text-xs md:text-sm"
-        >
-          <CloudDownload />
-          DOWNLOAD CV
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            size={
+              mounted && (isSmallScreen || isExtraSmallScreen)
+                ? "sm"
+                : "default"
+            }
+            className="hidden md:flex font-semibold text-xs md:text-sm"
+          >
+            <CloudDownload />
+            DOWNLOAD CV
+          </Button>
+          {mounted && <ThemeToggle />}
+        </div>
       </div>
     </nav>
   );
