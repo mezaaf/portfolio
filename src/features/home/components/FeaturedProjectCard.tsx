@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const FeaturedProjectCard = () => {
   return (
-    <Card className="w-full p-0">
+    <Card className="w-full p-0 bg-neutral-200 dark:bg-neutral-800">
       <CardContent className="flex flex-col-reverse lg:flex-row items-center gap-4 px-0 lg:pt-12">
         <div className="flex flex-col gap-6 lg:max-w-sm xl:max-w-lg p-4 sm:p-6 lg:p-0 lg:mx-6">
           <Badge>Web Application</Badge>
