@@ -14,7 +14,7 @@ const HeroSection = () => {
       </h1>
       <div className="min-h-[25vh] h-[30vh] lg:min-h-[80vh] lg:h-[90vh]">
         <Image
-          src={"/images/mezaaf.png"}
+          src={"/images/mezaaf.webp"}
           alt="mezaaf-hero"
           width={4000}
           height={4000}
