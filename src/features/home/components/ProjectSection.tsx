@@ -1,0 +1,19 @@
+import FeaturedProjectCard from "./FeaturedProjectCard";
+
+const ProjectSection = () => {
+  return (
+    <section
+      id="about"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center py-20"
+    >
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+        Fetured Project
+      </h1>
+      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
+        <FeaturedProjectCard />
+      </div>
+    </section>
+  );
+};
+
+export default ProjectSection;
