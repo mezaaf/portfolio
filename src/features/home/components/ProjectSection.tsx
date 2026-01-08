@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import FeaturedProjectCard from "./FeaturedProjectCard";
+import Link from "next/link";
 
 const ProjectSection = () => {
   return (
@@ -12,6 +14,9 @@ const ProjectSection = () => {
       <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
         <FeaturedProjectCard />
       </div>
+      <Button asChild>
+        <Link href={"/projects"}>View All Projects</Link>
+      </Button>
     </section>
   );
 };

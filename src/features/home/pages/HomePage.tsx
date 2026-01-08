@@ -4,11 +4,11 @@ import ProjectSection from "../components/ProjectSection";
 
 const HomePage = () => {
   return (
-    <main className="space-y-4">
+    <>
       <HeroSection />
       <AboutSection />
       <ProjectSection />
-    </main>
+    </>
   );
 };
 
