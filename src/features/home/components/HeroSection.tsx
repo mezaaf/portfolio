@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
@@ -7,16 +6,19 @@ import Image from "next/image";
 const HeroSection = () => {
   return (
     <section className="w-full">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center min-h-[90vh]">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 sm:gap-12 lg:gap-16 items-center justify-center py-12 sm:py-16 lg:py-20">
         <p className="">Hello there!👋, I&apos;m a Web Developer</p>
         <h1
           className={cn(
-            "relative text-center text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-12 sm:leading-16 lg:leading-20 tracking-tighter text-primary"
+            "text-center text-4xl md:text-7xl font-extrabold leading-10 sm:leading-16 lg:leading-20 tracking-tighter text-primary"
           )}
         >
-          TRANSFORMING <br /> IDEAS INTO REAL WORLD <br />
-          <span className="flex items-center justify-center gap-4">
-            <div className="h-10 md:h-16 aspect-square overflow-hidden bg-primary rotate-8 rounded-tr-xl rounded-bl-md">
+          TRANSFORMING <br />{" "}
+          <span className="block lg:hidden">IDEAS INTO REAL</span>
+          <span className="w-full hidden lg:block">IDEAS INTO REAL WORLD</span>
+          <span className="w-full flex items-center justify-center">
+            <span className="block lg:hidden">WORLD</span>
+            <div className="mx-2 h-8 md:h-16 aspect-square overflow-hidden bg-primary rotate-8 rounded-tr-xl rounded-bl-md">
               <Image
                 src={"/images/mezaaf.png"}
                 alt="mezaaf-hero"
@@ -27,15 +29,6 @@ const HeroSection = () => {
             </div>
             RESULTS
           </span>
-          <Badge className="absolute top-5 left-1 sm:top-8 sm:left-1 lg:left-2 lg:text-xl px-3 sm:px-6 lg:px-8 -rotate-28">
-            Code
-          </Badge>
-          <Badge className="absolute bg-accent text-primary top-6 right-3 lg:top-8 lg:right-6 lg:text-xl px-3 sm:px-6 lg:px-8 rotate-32">
-            Story
-          </Badge>
-          <Badge className="absolute bottom-6 right-3 sm:bottom-10 sm:right-7 lg:bottom-14 lg:right-12 lg:text-xl px-3 sm:px-6 lg:px-8 -rotate-20">
-            Beyound
-          </Badge>
         </h1>
         <p className="max-w-xl text-center">
           I build modern, scalable, and user friendly web applications—combining
