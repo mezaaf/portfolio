@@ -13,15 +13,15 @@ const AboutSection = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-8 sm:gap-12 lg:gap-16">
           <div className="w-full flex flex-col gap-6">
-            <p className="text-2xl sm:text-3xl lg:text-4xl">
+            <p className="text-2xl sm:text-3xl lg:text-4xl leading-normal">
               Helping projects and ideas stand out in the digital era by
               building modern, user-friendly web applications. Together, we
               grow, learn, and create—no nonsense, always improving and staying
               up to date.
             </p>
           </div>
-          <div className="w-full md:max-w-sm flex flex-col gap-8 sm:gap-12 lg:gap-16">
-            <p className="leading-7">
+          <div className="w-full md:max-w-sm flex flex-col gap-8 sm:gap-12 lg:gap-16 ">
+            <p className="leading-loose">
               I&apos;m a passionate web developer who builds modern, scalable,
               and user-friendly web applications, combining clean UI with solid
               backend engineering to bring ideas to life.

@@ -7,7 +7,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8 pb-12 sm:pb-16 lg:pb-20"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8 py-16 sm:py-18 lg:py-24"
     >
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
         Book A Call
