@@ -75,14 +75,14 @@ const navItems = [
   },
   {
     name: "ABOUT",
-    href: "#about",
+    href: "/#about",
   },
   {
     name: "PROJECT",
-    href: "#project",
+    href: "/projects",
   },
   {
     name: "CONTACT",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
