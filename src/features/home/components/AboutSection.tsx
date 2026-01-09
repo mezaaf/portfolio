@@ -4,7 +4,7 @@ const AboutSection = () => {
       id="about"
       className="w-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center py-16 sm:py-18 lg:py-24"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4 sm:gap-6 lg:gap-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
         <div>
           <h3 className="text-4xl font-extrabold text-muted-foreground">
             HELLO
@@ -27,7 +27,7 @@ const AboutSection = () => {
               backend engineering to bring ideas to life.
             </p>
             <div className="self-end md:self-start w-32 h-32 md:h-45 md:w-45 rounded-full bg-primary flex items-center justify-center">
-              <p className="text-center font-semibold">About Me</p>
+              <p className="text-center font-semibold text-white">About Me</p>
             </div>
           </div>
         </div>

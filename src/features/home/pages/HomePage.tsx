@@ -5,12 +5,12 @@ import ProjectSection from "../components/ProjectSection";
 
 const HomePage = () => {
   return (
-    <>
+    <main>
       <HeroSection />
       <AboutSection />
       <ProjectSection />
       <ContactSection />
-    </>
+    </main>
   );
 };
 

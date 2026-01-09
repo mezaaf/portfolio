@@ -20,7 +20,7 @@ const FeaturedProjectCard = () => {
           </p>
           <Link
             href={"#"}
-            className="self-end lg:self-start p-2 mb-0 lg:mb-6 xl:mb-0 bg-primary rounded-full w-fit group"
+            className="self-end text-white lg:self-start p-2 mb-0 lg:mb-6 xl:mb-0 bg-primary rounded-full w-fit group"
           >
             <ArrowRightIcon className="hover:-rotate-45 transition-transform duration-300 ease-in-out" />
           </Link>

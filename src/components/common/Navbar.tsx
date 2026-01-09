@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className="w-full z-10 sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center border-b border-primary backdrop-blur-3xl">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link href={"/"} className="flex items-center gap-2">
-          <span className="bg-primary rounded-full p-1">
+          <span className="bg-primary rounded-full p-1 text-white">
             <Code2Icon className="stroke-3" />
           </span>{" "}
           <h1 className="font-extrabold text-lg md:text-xl">Mezaaf</h1>
