@@ -12,16 +12,16 @@ const font = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "Mezaaf | %s",
-    default: "Mezaaf | Web Developer",
+    default: "Mezaaf",
+    template: " %s | Mezaaf",
   },
   description:
     "A seasoned web developer with a passion for creating engaging and interactive websites.",
   metadataBase: new URL("https://aafrzl.my.id"),
   openGraph: {
     title: {
-      template: "Mezaaf | %s",
-      default: "Mezaaf | Web Developer",
+      default: "Mezaaf",
+      template: " %s | Mezaaf",
     },
     description:
       "A seasoned web developer with a passion for creating engaging and interactive websites.",

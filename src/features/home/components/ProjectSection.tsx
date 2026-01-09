@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import FeaturedProjectCard from "./FeaturedProjectCard";
 import Link from "next/link";
 import { projectsData } from "@/lib/data/projectsData";
+import ProjectCard from "@/components/shared/ProjectCard";
 
 const ProjectSection = () => {
   return (
@@ -16,10 +16,7 @@ const ProjectSection = () => {
         {projectsData
           .filter((p) => p.isFeatured)
           .map((item, index) => (
-            <FeaturedProjectCard
-              key={`project-${index}-${item.title}`}
-              {...item}
-            />
+            <ProjectCard key={`project-${index}-${item.title}`} {...item} />
           ))}
       </div>
       <Button asChild>

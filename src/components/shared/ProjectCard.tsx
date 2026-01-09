@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 
-const FeaturedProjectCard = ({
+const ProjectCard = ({
   category,
   title,
   description,
@@ -57,4 +57,4 @@ const FeaturedProjectCard = ({
   );
 };
 
-export default FeaturedProjectCard;
+export default ProjectCard;
