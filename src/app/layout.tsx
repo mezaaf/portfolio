@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { Toaster } from "@/components/ui/sonner";
+import Footer from "@/components/common/Footer";
 
 const font = Work_Sans({ subsets: ["latin"] });
 
@@ -123,6 +124,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Footer />
             <Toaster richColors position="top-right" />
           </SmoothScrollProvider>
         </ThemeProvider>
