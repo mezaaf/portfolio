@@ -1,12 +1,11 @@
+import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
+import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/providers/ThemeProvider";
-import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
-import { Toaster } from "@/components/ui/sonner";
-import Footer from "@/components/common/Footer";
 
 const font = Work_Sans({ subsets: ["latin"] });
 
@@ -111,22 +110,10 @@ export default function RootLayout({
           enableSystem
           storageKey="theme-mode"
         >
-          <SmoothScrollProvider
-            option={{
-              smooth: true,
-              mobile: {
-                smooth: true,
-              },
-              tablet: {
-                smooth: true,
-              },
-            }}
-          >
-            <Navbar />
-            {children}
-            <Footer />
-            <Toaster richColors position="top-right" />
-          </SmoothScrollProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
     </html>
