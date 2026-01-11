@@ -5,8 +5,12 @@ import { CloudDownload, Code2Icon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 import ThemeToggle from "../shared/ThemeToggle";
+import { Button } from "../ui/button";
+import {
+  RESUME_DOWNLOAD_FILE_NAME,
+  RESUME_DOWNLOAD_URL,
+} from "@/constants/generalConstant";
 
 const Navbar = () => {
   const [mounted, setMounted] = useState(false);
@@ -15,6 +19,7 @@ const Navbar = () => {
   const { isExtraSmallScreen, isSmallScreen } = useMobile();
 
   useEffect(() => setMounted(true), []);
+
   return (
     <nav className="w-full z-10 sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center border-b border-primary backdrop-blur-3xl">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -55,9 +60,15 @@ const Navbar = () => {
                 : "default"
             }
             className="hidden md:flex font-semibold text-xs md:text-sm"
+            asChild
           >
-            <CloudDownload />
-            DOWNLOAD CV
+            <Link
+              href={RESUME_DOWNLOAD_URL}
+              download={RESUME_DOWNLOAD_FILE_NAME}
+            >
+              <CloudDownload />
+              DOWNLOAD CV
+            </Link>
           </Button>
           {mounted && <ThemeToggle />}
         </div>
