@@ -98,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={cn(
           "bg-zinc-50 text-zinc-800 antialiased dark:bg-neutral-900 dark:text-zinc-50 scroll-smooth",
