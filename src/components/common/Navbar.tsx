@@ -15,15 +15,23 @@ import {
 const Navbar = () => {
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-
+  const [hash, setHash] = useState("");
   const { isExtraSmallScreen, isSmallScreen } = useMobile();
 
   useEffect(() => setMounted(true), []);
 
+  useEffect(() => {
+    setHash(window.location.hash);
+  }, []);
+
   return (
     <nav className="w-full z-10 sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center border-b border-primary backdrop-blur-3xl">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link href={"/"} className="flex items-center gap-2">
+        <Link
+          href={"/"}
+          onClick={() => setHash("")}
+          className="flex items-center gap-2"
+        >
           <span className="bg-primary rounded-full p-1 text-white">
             <Code2Icon className="stroke-3" />
           </span>{" "}
@@ -31,11 +39,18 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex items-center gap-4 sm:gap-6 lg:gap-8">
           {navItems.map((nav) => {
-            const isActive = pathname === nav.href;
+            const isActive =
+              nav.href === "/"
+                ? pathname === "/" && hash === ""
+                : hash === `#${nav.href.split("#")[1]}`;
             return (
               <Link
                 key={nav.name}
                 href={nav.href}
+                onClick={() => {
+                  const nextHash = nav.href.split("#")[1];
+                  setHash(nextHash ? `#${nextHash}` : "");
+                }}
                 className={cn(
                   "flex items-center gap-2 hover:text-primary",
                   isActive && "text-primary"
@@ -90,7 +105,11 @@ const navItems = [
   },
   {
     name: "PROJECT",
-    href: "/projects",
+    href: "/#project",
+  },
+  {
+    name: "EXPERTISE",
+    href: "/#expertise",
   },
   {
     name: "CONTACT",

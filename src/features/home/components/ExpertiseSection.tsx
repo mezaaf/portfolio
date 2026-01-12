@@ -4,7 +4,7 @@ import ExpertiseItem from "./ExpertiseItem";
 const ExpertiseSection = () => {
   return (
     <section
-      id="contact"
+      id="expertise"
       className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-8 pt-16 sm:pt-18 lg:pt-24"
     >
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">

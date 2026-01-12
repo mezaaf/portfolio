@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="overflow-hidden flex items-center justify-center relative">
-      <h1 className="mt-4 sm:mt-8 lg:mt-20 w-full absolute px-4 sm:px-6 lg:px-8 text-4xl sm:text-7xl lg:text-[170px] font-extrabold tracking-tight lg:leading-45 text-center">
+    <section className="overflow-hidden flex items-center justify-center pt-4 sm:pt-8 lg:pt-20 relative">
+      <h1 className="w-full absolute px-4 sm:px-6 lg:px-8 text-4xl sm:text-7xl lg:text-[170px] font-extrabold tracking-tight lg:leading-45 text-center">
         I&apos;M A WEBSITE <br />
         <span
           data-outline="DEVELOPER"
