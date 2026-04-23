@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 
 const ProjectCard = ({
+  imageUrl,
   category,
   title,
   description,
@@ -44,11 +45,12 @@ const ProjectCard = ({
         <div className="self-end">
           <div className="aspect-video overflow-hidden rounded-lg">
             <Image
-              src="/images/projects/pondok-ngujur.png"
-              alt="pondok-ngujur"
+              src={imageUrl}
+              alt={title}
               width={1200}
               height={720}
-              className="w-full h-full object-cover object-bottom-left"
+              priority
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </div>
