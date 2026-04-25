@@ -1,12 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Project } from "@/lib/data/projectsData";
 import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 
-const ProjectCard = ({
+export const ProjectCard = ({
   imageUrl,
   category,
   title,
@@ -59,4 +60,29 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export const ProjectCardSkeleton = () => {
+  return (
+    <Card className="w-full p-0 bg-neutral-200 dark:bg-neutral-800">
+      <CardContent className="flex flex-col-reverse lg:flex-row items-center gap-4 px-0 lg:pt-12">
+        <div className="flex flex-col gap-6 lg:max-w-sm xl:max-w-lg p-4 sm:p-6 lg:p-0 lg:mx-6 w-full">
+          <Skeleton className="h-6 w-24" />
+          <Skeleton className="h-8 w-3/4" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-11/12" />
+            <Skeleton className="h-4 w-2/3" />
+          </div>
+          <div className="flex items-center gap-2 mb-6">
+            <Skeleton className="h-11 w-11 rounded-full" />
+            <Skeleton className="h-11 w-11 rounded-full" />
+          </div>
+        </div>
+        <div className="self-end w-full lg:w-auto">
+          <div className="aspect-video overflow-hidden rounded-lg">
+            <Skeleton className="h-full w-full" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};

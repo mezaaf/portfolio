@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 
 const font = Work_Sans({ subsets: ["latin"] });
 
@@ -101,20 +102,22 @@ export default function RootLayout({
       <body
         className={cn(
           "bg-zinc-50 text-zinc-800 antialiased dark:bg-neutral-900 dark:text-zinc-50 scroll-smooth",
-          font.className
+          font.className,
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          storageKey="theme-mode"
-        >
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster richColors position="top-right" />
-        </ThemeProvider>
+        <TanstackQueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            storageKey="theme-mode"
+          >
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster richColors position="top-right" />
+          </ThemeProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   );
