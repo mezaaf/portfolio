@@ -2,9 +2,11 @@
 
 import { env } from "@/env";
 import { googleSheetService } from "@/lib/google-sheets";
-import { GetProjectsResponse } from "../services/getProjects";
+import { GetProjectsInput, GetProjectsResponse } from "../services/getProjects";
 
-export async function getProjectsAction() {
+export async function getProjectsAction({
+  isFeatured = false,
+}: GetProjectsInput) {
   try {
     const range = "Projects!A2:H1000";
     const result = await googleSheetService.spreadsheets.values.get({
@@ -23,7 +25,9 @@ export async function getProjectsAction() {
       githubUrl: row?.[6] ?? "",
       isFeatured: row?.[7] === "TRUE",
     }));
-    return mappedData;
+
+    const featuredProjects = mappedData.filter((p) => p.isFeatured);
+    return isFeatured ? featuredProjects : mappedData;
   } catch (error) {
     console.log("Error fetching project data: ", error);
     return null;

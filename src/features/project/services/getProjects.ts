@@ -13,22 +13,33 @@ export type GetProjectsResponse = {
   isFeatured: boolean;
 }[];
 
-export const getProjectsQueryKey = () => ["projects"];
+export type GetProjectsInput = {
+  isFeatured?: boolean;
+};
 
-export const getProjectsQueryOptions = () => {
+export const getProjectsQueryKey = (input: GetProjectsInput) => [
+  "projects",
+  input,
+];
+
+export const getProjectsQueryOptions = (input: GetProjectsInput) => {
   return queryOptions({
-    queryKey: getProjectsQueryKey(),
-    queryFn: () => getProjectsAction(),
+    queryKey: getProjectsQueryKey(input),
+    queryFn: () => getProjectsAction(input),
   });
 };
 
 type UseGetProjectsParams = {
+  input: GetProjectsInput;
   queryConfig?: QueryConfig<typeof getProjectsQueryOptions>;
 };
 
-export const useGetProjects = (params: UseGetProjectsParams = {}) => {
+export const useGetProjects = ({
+  input,
+  queryConfig,
+}: UseGetProjectsParams) => {
   return useQuery({
-    ...getProjectsQueryOptions(),
-    ...params.queryConfig,
+    ...getProjectsQueryOptions(input),
+    ...queryConfig,
   });
 };

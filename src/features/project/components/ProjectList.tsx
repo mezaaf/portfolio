@@ -8,7 +8,9 @@ import { driveToImage } from "@/lib/utils";
 import { Activity } from "react";
 
 const ProjectList = () => {
-  const { data, isLoading } = useGetProjects();
+  const { data, isLoading } = useGetProjects({
+    input: {},
+  });
   return (
     <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
       <Activity mode={isLoading ? "hidden" : "visible"}>
