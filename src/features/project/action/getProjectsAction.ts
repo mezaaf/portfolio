@@ -15,18 +15,20 @@ export async function getProjectsAction({
     });
 
     const rows = result.data.values;
-    const mappedData: GetProjectsResponse = rows.map((row: string[]) => ({
-      id: row[0],
-      title: row?.[1] ?? "",
-      category: row?.[2] ?? "",
-      description: row?.[3] ?? "",
-      imageUrl: row?.[4] ?? "",
-      siteUrl: row?.[5] ?? "",
-      githubUrl: row?.[6] ?? "",
-      isFeatured: row?.[7] === "TRUE",
-    }));
+    const mappedData: GetProjectsResponse | undefined = rows?.map(
+      (row: string[]) => ({
+        id: row[0],
+        title: row?.[1] ?? "",
+        category: row?.[2] ?? "",
+        description: row?.[3] ?? "",
+        imageUrl: row?.[4] ?? "",
+        siteUrl: row?.[5] ?? "",
+        githubUrl: row?.[6] ?? "",
+        isFeatured: row?.[7] === "TRUE",
+      }),
+    );
 
-    const featuredProjects = mappedData.filter((p) => p.isFeatured);
+    const featuredProjects = mappedData?.filter((p) => p.isFeatured);
     return isFeatured ? featuredProjects : mappedData;
   } catch (error) {
     console.log("Error fetching project data: ", error);

@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Project } from "@/lib/data/projectsData";
+import { GetProjectsResponse } from "@/features/project/services/getProjects";
 import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +14,7 @@ export const ProjectCard = ({
   description,
   siteUrl,
   githubUrl,
-}: Project) => {
+}: GetProjectsResponse[0]) => {
   return (
     <Card className="w-full p-0 bg-neutral-200 dark:bg-neutral-800">
       <CardContent className="flex flex-col-reverse lg:flex-row items-center gap-4 px-0 lg:pt-12">
