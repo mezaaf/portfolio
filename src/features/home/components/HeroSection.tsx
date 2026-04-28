@@ -1,8 +1,9 @@
+import SectionContainer from "@/components/layouts/SectionContainer";
 import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto flex min-h-screen flex-col justify-center px-4 sm:px-6 lg:justify-end lg:px-8">
+    <SectionContainer className="mt-10 sm:mt-0">
       <div className="flex w-full flex-col items-center justify-center gap-8 p-[12px] md:p-[16px] lg:flex-row lg:p-[20px]">
         <div className="w-full">
           <h1 className="text-center text-[4rem] leading-none font-medium md:text-[6rem] lg:text-left lg:text-[8rem]">
@@ -26,7 +27,7 @@ const HeroSection = () => {
           </h5>
         </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

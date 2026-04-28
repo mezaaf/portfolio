@@ -1,7 +1,7 @@
+import Navbar from "@/components/common/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
-import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
@@ -99,22 +99,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={cn(
-          "scroll-smooth bg-zinc-50 text-zinc-800 antialiased dark:bg-neutral-900 dark:text-zinc-50",
+          "bg-my-grey-1 text-my-black scroll-smooth antialiased",
           font.className,
         )}
       >
         <TanstackQueryProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            storageKey="theme-mode"
-          >
-            {/* <Navbar /> */}
-            {children}
-            {/* <Footer /> */}
-            <Toaster richColors position="top-right" />
-          </ThemeProvider>
+          <Navbar />
+          {children}
+          {/* <Footer /> */}
+          <Toaster richColors position="top-right" />
         </TanstackQueryProvider>
       </body>
     </html>

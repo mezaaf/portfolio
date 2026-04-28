@@ -1,91 +1,55 @@
 "use client";
-import { useMobile } from "@/hooks/use-mobile";
-import { cn } from "@/lib/utils";
-import { CloudDownload, Code2Icon } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import ThemeToggle from "../shared/ThemeToggle";
-import { Button } from "../ui/button";
 import {
   RESUME_DOWNLOAD_FILE_NAME,
   RESUME_DOWNLOAD_URL,
 } from "@/constants/generalConstant";
+import { cn } from "@/lib/utils";
+import { CloudDownload, Code2Icon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { buttonVariants } from "../ui/button";
 
 const Navbar = () => {
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-  const [hash, setHash] = useState("");
-  const { isExtraSmallScreen, isSmallScreen } = useMobile();
-
-  useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    setHash(window.location.hash);
-  }, []);
 
   return (
-    <nav className="w-full z-10 sticky top-0 h-16 sm:h-18 lg:h-20 flex items-center justify-center border-b border-primary backdrop-blur-3xl">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link
-          href={"/"}
-          onClick={() => setHash("")}
-          className="flex items-center gap-2"
-        >
-          <span className="bg-primary rounded-full p-1 text-white">
+    <nav className="fixed top-3 z-10 flex w-full items-center justify-center px-[12px] sm:px-[16px] lg:px-[20px]">
+      <div className="container mx-auto flex h-16 w-full items-center justify-between rounded-full px-4 backdrop-blur-3xl backdrop:blur-xl sm:px-6 md:h-18 lg:px-8">
+        <Link href={"/"} className="flex items-center gap-2">
+          <span className="bg-my-black rounded-full p-1 text-white">
             <Code2Icon className="stroke-3" />
           </span>{" "}
-          <h1 className="font-extrabold text-lg md:text-xl">Mezaaf</h1>
+          <h1 className="text-lg font-extrabold md:text-xl">Mezaaf.</h1>
         </Link>
-        <div className="hidden md:flex items-center gap-4 sm:gap-6 lg:gap-8">
+        <div className="hidden items-center gap-4 sm:gap-6 md:flex lg:gap-8">
           {navItems.map((nav) => {
-            const isActive =
-              nav.href === "/"
-                ? pathname === "/" && hash === ""
-                : hash === `#${nav.href.split("#")[1]}`;
+            const isActive = nav.href === pathname;
             return (
               <Link
                 key={nav.name}
                 href={nav.href}
-                onClick={() => {
-                  const nextHash = nav.href.split("#")[1];
-                  setHash(nextHash ? `#${nextHash}` : "");
-                }}
                 className={cn(
-                  "flex items-center gap-2 hover:text-primary",
-                  isActive && "text-primary"
+                  "hover:text-my-black text-muted-foreground flex items-center gap-2 transition-colors duration-300",
+                  isActive && "text-my-black",
                 )}
               >
-                <div
-                  className={cn(
-                    "h-2 w-2 rounded-full transition-all duration-300 ease-in-out",
-                    isActive && "bg-primary font-semibold"
-                  )}
-                />{" "}
                 {nav.name}
               </Link>
             );
           })}
         </div>
         <div className="flex items-center gap-2">
-          <Button
-            size={
-              mounted && (isSmallScreen || isExtraSmallScreen)
-                ? "sm"
-                : "default"
-            }
-            className="hidden md:flex font-semibold text-xs md:text-sm"
-            asChild
+          <Link
+            href={RESUME_DOWNLOAD_URL}
+            download={RESUME_DOWNLOAD_FILE_NAME}
+            className={cn(
+              buttonVariants(),
+              "bg-my-black hidden rounded-full p-6 font-semibold md:flex",
+            )}
           >
-            <Link
-              href={RESUME_DOWNLOAD_URL}
-              download={RESUME_DOWNLOAD_FILE_NAME}
-            >
-              <CloudDownload />
-              DOWNLOAD CV
-            </Link>
-          </Button>
-          {mounted && <ThemeToggle />}
+            <CloudDownload />
+            DOWNLOAD CV
+          </Link>
         </div>
       </div>
     </nav>
@@ -101,18 +65,10 @@ const navItems = [
   },
   {
     name: "ABOUT",
-    href: "/#about",
+    href: "/about",
   },
   {
     name: "PROJECT",
-    href: "/#project",
-  },
-  {
-    name: "EXPERTISE",
-    href: "/#expertise",
-  },
-  {
-    name: "CONTACT",
-    href: "/#contact",
+    href: "/project",
   },
 ];
