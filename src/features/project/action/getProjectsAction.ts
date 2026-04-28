@@ -15,9 +15,9 @@ export async function getProjectsAction({
     });
 
     const rows = result.data.values;
-    const mappedData: GetProjectsResponse | undefined = rows?.map(
+    const mappedData: GetProjectsResponse = (rows ?? []).map(
       (row: string[]) => ({
-        id: row[0],
+        id: row[0] ?? "",
         title: row?.[1] ?? "",
         category: row?.[2] ?? "",
         description: row?.[3] ?? "",
@@ -28,8 +28,7 @@ export async function getProjectsAction({
       }),
     );
 
-    const featuredProjects = mappedData?.filter((p) => p.isFeatured);
-    return isFeatured ? featuredProjects : mappedData;
+    return isFeatured ? mappedData.filter((p) => p.isFeatured) : mappedData;
   } catch (error) {
     console.log("Error fetching project data: ", error);
     return null;

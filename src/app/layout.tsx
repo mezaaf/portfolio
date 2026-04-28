@@ -1,14 +1,12 @@
-import Footer from "@/components/common/Footer";
-import Navbar from "@/components/common/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
-import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 
-const font = Work_Sans({ subsets: ["latin"] });
+const font = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -101,7 +99,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         className={cn(
-          "bg-zinc-50 text-zinc-800 antialiased dark:bg-neutral-900 dark:text-zinc-50 scroll-smooth",
+          "scroll-smooth bg-zinc-50 text-zinc-800 antialiased dark:bg-neutral-900 dark:text-zinc-50",
           font.className,
         )}
       >
@@ -112,9 +110,9 @@ export default function RootLayout({
             enableSystem
             storageKey="theme-mode"
           >
-            <Navbar />
+            {/* <Navbar /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
             <Toaster richColors position="top-right" />
           </ThemeProvider>
         </TanstackQueryProvider>

@@ -2,25 +2,29 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="overflow-hidden flex items-center justify-center pt-4 sm:pt-8 lg:pt-20 relative">
-      <h1 className="w-full absolute px-4 sm:px-6 lg:px-8 text-4xl sm:text-7xl lg:text-[170px] font-extrabold tracking-tight lg:leading-45 text-center">
-        I&apos;M A WEBSITE <br />
-        <span
-          data-outline="DEVELOPER"
-          className="outline-hero-text relative inline-block"
-        >
-          DEVELOPER
-        </span>
-      </h1>
-      <div className="min-h-[25vh] h-[30vh] lg:min-h-[80vh] lg:h-[90vh]">
-        <Image
-          src="/images/mezaaf.webp"
-          alt="mezaaf-hero"
-          width={4000}
-          height={4000}
-          priority
-          className="grayscale h-full w-full object-cover object-center"
-        />
+    <section className="container mx-auto flex min-h-screen flex-col justify-center px-4 sm:px-6 lg:justify-end lg:px-8">
+      <div className="flex w-full flex-col items-center justify-center gap-8 p-[12px] md:p-[16px] lg:flex-row lg:p-[20px]">
+        <div className="w-full">
+          <h1 className="text-center text-[4rem] leading-none font-medium md:text-[6rem] lg:text-left lg:text-[8rem]">
+            Fullstack <br /> Developer
+          </h1>
+        </div>
+        <div className="flex w-full flex-col items-center gap-8 md:gap-12 lg:items-end lg:gap-16">
+          <div className="aspect-square h-[300px] w-[300px] overflow-hidden rounded-4xl md:aspect-3/4 md:h-[456px] md:w-[394px]">
+            <Image
+              src="/images/mezaaf-2.webp"
+              alt="Hero Image"
+              width={500}
+              height={500}
+              priority
+              className="h-full w-full rotate-y-180 object-cover grayscale"
+            />
+          </div>
+          <h5 className="max-w-xs text-center text-[1.25rem] leading-tight tracking-normal md:text-[1.5rem] lg:text-end">
+            Hello, I&apos;m Mezaaf, a fullstack developer focused on creating
+            user-friendly digital experiences.
+          </h5>
+        </div>
       </div>
     </section>
   );
