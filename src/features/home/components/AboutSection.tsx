@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AboutSection = () => {
   return (
-    <div className="container mx-auto grid w-full grid-cols-1 gap-4 px-4 pb-20 md:grid-cols-2 md:px-12 xl:px-20">
+    <section className="container mx-auto grid w-full grid-cols-1 gap-4 px-4 pb-20 md:grid-cols-2 md:px-12 xl:px-20">
       <Link
         href="/about"
         className="text-my-white relative flex min-h-96 w-full flex-col justify-between overflow-hidden rounded-lg bg-[url(/images/mezaaf-2.webp)] bg-cover bg-top p-6 grayscale-75 transition-transform duration-300 ease-in-out hover:scale-99 md:p-8"
@@ -46,7 +46,7 @@ const AboutSection = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
