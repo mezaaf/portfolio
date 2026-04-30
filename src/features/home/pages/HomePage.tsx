@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import AboutSection from "../components/AboutSection";
-import HeroSection from "../components/HeroSection";
 import ExperienceSection from "../components/ExperienceSection";
+import HeroSection from "../components/HeroSection";
+import ProjectSection from "../components/ProjectSection";
 
 export const metadata: Metadata = {
   title: {
@@ -15,6 +16,7 @@ const HomePage = () => {
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
+      <ProjectSection />
     </main>
   );
 };

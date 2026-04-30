@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 const ExperienceSection = () => {
   return (
-    <section className="container mx-auto space-y-12 px-4 md:px-12 xl:px-20">
+    <section className="container mx-auto space-y-12 px-4">
       <h1 className="text-center text-[2rem] leading-none font-medium md:text-[3rem] lg:text-left lg:text-[5rem]">
         Experience.
       </h1>

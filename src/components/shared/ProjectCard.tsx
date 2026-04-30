@@ -1,11 +1,12 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { GetProjectsResponse } from "@/features/project/services/getProjects";
+import { cn } from "@/lib/utils";
 import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
+import { Badge } from "../ui/badge";
 
 export const ProjectCard = ({
   imageUrl,
@@ -16,73 +17,67 @@ export const ProjectCard = ({
   githubUrl,
 }: GetProjectsResponse[0]) => {
   return (
-    <Card className="w-full p-0 bg-neutral-200 dark:bg-neutral-800">
-      <CardContent className="flex flex-col-reverse lg:flex-row items-center gap-4 px-0 lg:pt-12">
-        <div className="flex flex-col gap-6 lg:max-w-sm xl:max-w-lg p-4 sm:p-6 lg:p-0 lg:mx-6">
-          <Badge>{category}</Badge>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">{title}</h1>
-          <p>{description}</p>
-          <div className="flex items-center gap-2">
-            {siteUrl && (
-              <Link
-                href={siteUrl}
-                target="_blank"
-                className="self-end lg:self-start p-3 mb-0 lg:mb-6 xl:mb-0 border border-primary hover:bg-primary rounded-full w-fit text-primary hover:text-white transition-colors duration-300 ease-in-out"
-              >
-                <LinkIcon className="size-5" />
-              </Link>
-            )}
-            {githubUrl && (
-              <Link
-                href={githubUrl}
-                target="_blank"
-                className="self-end lg:self-start p-3 mb-0 lg:mb-6 xl:mb-0 border border-primary hover:bg-primary rounded-full w-fit text-primary hover:text-white transition-colors duration-300 ease-in-out"
-              >
-                <FaGithub className="size-5" />
-              </Link>
-            )}
-          </div>
-        </div>
-        <div className="self-end">
-          <div className="aspect-video overflow-hidden rounded-lg">
-            <Image
-              src={imageUrl}
-              alt={title}
-              width={1200}
-              height={720}
-              priority
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-        </div>
+    <Card className="overflow-hidden bg-transparent px-0 pt-0 shadow-none! ring-0">
+      <CardContent className="bg-my-black relative h-fit p-0">
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={500}
+          height={300}
+          priority
+          className={cn("h-full w-full object-cover object-center")}
+        />
+        <Badge className="absolute top-4 left-4">{category}</Badge>
       </CardContent>
+      <CardFooter className="flex h-full flex-col justify-between gap-2">
+        <div className="flex flex-col gap-2">
+          <h1 className="font-bold">{title}</h1>
+          <p className="text-justify">{description}</p>
+        </div>
+        <div className="mt-2 flex w-full gap-4">
+          {siteUrl && (
+            <Link
+              href={siteUrl}
+              target="_blank"
+              className="border-primary hover:bg-primary text-primary mb-0 w-fit self-end rounded-full border p-3 transition-colors duration-300 ease-in-out hover:text-white lg:mb-6 lg:self-start xl:mb-0"
+            >
+              <LinkIcon className="size-5" />
+            </Link>
+          )}
+          {githubUrl && (
+            <Link
+              href={githubUrl}
+              target="_blank"
+              className="border-primary hover:bg-primary text-primary mb-0 w-fit self-end rounded-full border p-3 transition-colors duration-300 ease-in-out hover:text-white lg:mb-6 lg:self-start xl:mb-0"
+            >
+              <FaGithub className="size-5" />
+            </Link>
+          )}
+        </div>
+      </CardFooter>
     </Card>
   );
 };
 
 export const ProjectCardSkeleton = () => {
   return (
-    <Card className="w-full p-0 bg-neutral-200 dark:bg-neutral-800">
-      <CardContent className="flex flex-col-reverse lg:flex-row items-center gap-4 px-0 lg:pt-12">
-        <div className="flex flex-col gap-6 lg:max-w-sm xl:max-w-lg p-4 sm:p-6 lg:p-0 lg:mx-6 w-full">
-          <Skeleton className="h-6 w-24" />
-          <Skeleton className="h-8 w-3/4" />
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-11/12" />
-            <Skeleton className="h-4 w-2/3" />
-          </div>
-          <div className="flex items-center gap-2 mb-6">
-            <Skeleton className="h-11 w-11 rounded-full" />
-            <Skeleton className="h-11 w-11 rounded-full" />
-          </div>
-        </div>
-        <div className="self-end w-full lg:w-auto">
-          <div className="aspect-video overflow-hidden rounded-lg">
-            <Skeleton className="h-full w-full" />
-          </div>
-        </div>
+    <Card className="overflow-hidden bg-transparent px-0 pt-0 shadow-none! ring-0">
+      <CardContent className="bg-my-black relative h-fit p-0">
+        <Skeleton className="h-96 w-full" />
+        <Skeleton className="absolute top-4 left-4 h-6 w-20 rounded-full" />
       </CardContent>
+      <CardFooter className="flex h-full flex-col justify-between gap-2">
+        <div className="flex w-full flex-col gap-2">
+          <Skeleton className="h-6 w-3/4" />
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-2/3" />
+        </div>
+        <div className="mt-2 flex w-full gap-4">
+          <Skeleton className="h-10 w-10 rounded-full" />
+          <Skeleton className="h-10 w-10 rounded-full" />
+        </div>
+      </CardFooter>
     </Card>
   );
 };

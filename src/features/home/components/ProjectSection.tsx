@@ -1,13 +1,11 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import {
   ProjectCard,
   ProjectCardSkeleton,
 } from "@/components/shared/ProjectCard";
 import { useGetProjects } from "@/features/project/services/getProjects";
-import { Activity } from "react";
 import { driveToImage } from "@/lib/utils";
+import { Activity } from "react";
 
 const ProjectSection = () => {
   const { data, isLoading } = useGetProjects({
@@ -15,15 +13,19 @@ const ProjectSection = () => {
       isFeatured: true,
     },
   });
+
+  console.log(data);
   return (
-    <section
-      id="project"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 items-center justify-center pt-16 sm:pt-18 lg:pt-24"
-    >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
-        Fetured Project
-      </h1>
-      <div className="w-full flex flex-col gap-4 sm:gap-6 lg:gap-8">
+    <section className="container mx-auto space-y-12 px-4 pb-20">
+      <div className="flex flex-col gap-2">
+        <h1 className="text-center text-[2rem] leading-none font-medium md:text-[3rem] lg:text-left lg:text-[5rem]">
+          Projects.
+        </h1>
+        <h6 className="text-my-black/80 font-medium md:text-lg">
+          A selection of my latest projects
+        </h6>
+      </div>
+      <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
         <Activity mode={isLoading ? "hidden" : "visible"}>
           {data?.map((item) => (
             <ProjectCard
@@ -39,9 +41,6 @@ const ProjectSection = () => {
           ))}
         </Activity>
       </div>
-      <Button asChild>
-        <Link href={"/projects"}>View All Projects</Link>
-      </Button>
     </section>
   );
 };
