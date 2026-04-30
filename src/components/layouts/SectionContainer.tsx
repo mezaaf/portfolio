@@ -4,14 +4,20 @@ import { ReactNode } from "react";
 
 type SectionContainerProps = {
   children: ReactNode;
+  minfullScreen?: boolean;
   className?: string;
 };
 
-const SectionContainer = ({ children, className }: SectionContainerProps) => {
+const SectionContainer = ({
+  children,
+  minfullScreen = false,
+  className,
+}: SectionContainerProps) => {
   return (
     <section
       className={cn(
-        "container mx-auto flex min-h-screen flex-col justify-center px-4 sm:px-6 lg:justify-end lg:px-8",
+        "container mx-auto flex flex-col justify-center",
+        minfullScreen && "min-h-screen",
         className,
       )}
     >

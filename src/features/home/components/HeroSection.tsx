@@ -1,12 +1,11 @@
-import SectionContainer from "@/components/layouts/SectionContainer";
 import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <SectionContainer className="mt-10 sm:mt-0">
-      <div className="flex w-full flex-col items-center justify-center gap-8 p-[12px] md:p-[16px] lg:flex-row lg:p-[20px]">
+    <div className="container mx-auto mt-10 flex min-h-screen flex-col justify-center px-4 sm:mt-0 md:px-12 lg:justify-end xl:px-20">
+      <div className="flex w-full flex-col items-center justify-center gap-8 pb-8 lg:flex-row">
         <div className="w-full">
-          <h1 className="text-center text-[4rem] leading-none font-medium md:text-[6rem] lg:text-left lg:text-[8rem]">
+          <h1 className="text-center text-[2rem] leading-none font-medium md:text-[4rem] lg:text-left lg:text-[6rem]">
             Fullstack <br /> Developer
           </h1>
         </div>
@@ -27,7 +26,7 @@ const HeroSection = () => {
           </h5>
         </div>
       </div>
-    </SectionContainer>
+    </div>
   );
 };
 

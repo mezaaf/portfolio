@@ -1,38 +1,52 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
+
 const AboutSection = () => {
   return (
-    <section
-      id="about"
-      className="w-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center py-16 sm:py-18 lg:py-24"
-    >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
-        <div>
-          <h3 className="text-4xl font-extrabold text-muted-foreground">
-            HELLO
-          </h3>
-          <h1 className="text-5xl font-extrabold">I&apos;M MEZAAF</h1>
+    <div className="container mx-auto grid w-full grid-cols-1 gap-4 px-4 pb-20 md:grid-cols-2 md:px-12 xl:px-20">
+      <Link
+        href="/about"
+        className="text-my-white relative flex min-h-96 w-full flex-col justify-between overflow-hidden rounded-lg bg-[url(/images/mezaaf-2.webp)] bg-cover bg-top p-6 grayscale-75 transition-transform duration-300 ease-in-out hover:scale-99 md:p-8"
+      >
+        <div className="w-full">
+          <h1 className="text-my-black text-center text-[1rem] leading-none font-medium md:text-[2rem] lg:text-left lg:text-[3rem]">
+            About Me
+          </h1>
         </div>
-        <div className="flex flex-col md:flex-row gap-8 sm:gap-12 lg:gap-16">
-          <div className="w-full flex flex-col gap-6">
-            <p className="text-2xl sm:text-3xl lg:text-4xl leading-normal">
-              Helping projects and ideas stand out in the digital era by
-              building modern, user-friendly web applications. Together, we
-              grow, learn, and create—no nonsense, always improving and staying
-              up to date.
+        <div className="flex w-full justify-end">
+          <h5 className="text-my-black flex items-center gap-2 text-[1rem] md:text-[1.25rem] xl:text-[1.5rem]">
+            Read More <ArrowRightIcon />
+          </h5>
+        </div>
+      </Link>
+      <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
+        <Card className="bg-my-grey-3 border-my-black/30 justify-center shadow-none">
+          <CardContent className="flex flex-col justify-center gap-1">
+            <h4 className="text-[2.5rem] font-medium">Mezaaf</h4>
+            <p className="text-my-black/80 text-[1rem] md:text-[1.25rem]">
+              A fullstack developer who enjoys creating simple, user-friendly
+              web experiences, focusing on clean design, solid functionality,
+              and continuous growth.
             </p>
-          </div>
-          <div className="w-full md:max-w-sm flex flex-col gap-8 sm:gap-12 lg:gap-16 ">
-            <p className="leading-loose">
-              I&apos;m a passionate web developer who builds modern, scalable,
-              and user-friendly web applications, combining clean UI with solid
-              backend engineering to bring ideas to life.
-            </p>
-            <div className="self-end md:self-start w-32 h-32 md:h-45 md:w-45 rounded-full bg-primary flex items-center justify-center">
-              <p className="text-center font-semibold text-white">About Me</p>
-            </div>
-          </div>
+          </CardContent>
+        </Card>
+        <div className="flex flex-col gap-4">
+          <Card className="bg-my-grey-3 border-my-black/30 min-h-[calc(1/2*95%)] justify-center shadow-none">
+            <CardContent className="flex flex-col justify-center gap-1">
+              <h4 className="text-[2.5rem] font-medium">10+</h4>
+              <p className="text-[1rem]">Projects Completed</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-my-grey-3 border-my-black/30 min-h-[calc(1/2*95%)] justify-center shadow-none">
+            <CardContent className="flex flex-col justify-center gap-1">
+              <h4 className="text-[2.5rem] font-medium">2+</h4>
+              <p className="text-[1rem]">Years of Experience</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

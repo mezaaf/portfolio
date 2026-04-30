@@ -13,7 +13,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-3 z-10 flex w-full items-center justify-center px-[12px] sm:px-[16px] lg:px-[20px]">
+    <nav className="fixed top-3 z-10 flex w-full items-center justify-center px-12 sm:px-16 lg:px-20">
       <div className="container mx-auto flex h-16 w-full items-center justify-between rounded-full px-4 backdrop-blur-3xl backdrop:blur-xl sm:px-6 md:h-18 lg:px-8">
         <Link href={"/"} className="flex items-center gap-2">
           <span className="bg-my-black rounded-full p-1 text-white">
