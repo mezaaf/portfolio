@@ -19,7 +19,7 @@ const Navbar = () => {
           <span className="bg-my-black rounded-full p-1 text-white">
             <Code2Icon className="stroke-3" />
           </span>{" "}
-          <h1 className="text-lg font-extrabold md:text-xl">Mezaaf.</h1>
+          <h1 className="text-lg font-semibold md:text-xl">Mezaaf.</h1>
         </Link>
         <div className="hidden items-center gap-4 sm:gap-6 md:flex lg:gap-8">
           {navItems.map((nav) => {
@@ -29,7 +29,7 @@ const Navbar = () => {
                 key={nav.name}
                 href={nav.href}
                 className={cn(
-                  "hover:text-my-black text-muted-foreground flex items-center gap-2 transition-colors duration-300",
+                  "hover:text-my-black text-muted-foreground flex items-center gap-2 font-medium transition-colors duration-300",
                   isActive && "text-my-black",
                 )}
               >
@@ -44,7 +44,7 @@ const Navbar = () => {
             download={RESUME_DOWNLOAD_FILE_NAME}
             className={cn(
               buttonVariants(),
-              "bg-my-black hidden rounded-full p-6 font-semibold md:flex",
+              "bg-my-black hidden rounded-full p-6 md:flex",
             )}
           >
             <CloudDownload />

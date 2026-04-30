@@ -5,6 +5,7 @@ import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/common/Footer";
 
 const font = Geist({ subsets: ["latin"] });
 
@@ -106,7 +107,7 @@ export default function RootLayout({
         <TanstackQueryProvider>
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
           <Toaster richColors position="top-right" />
         </TanstackQueryProvider>
       </body>

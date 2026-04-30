@@ -11,7 +11,7 @@ const ExperienceSection = () => {
           <div
             key={index}
             className={cn(
-              "border-my-black/80 flex items-center justify-between border-t px-4 py-6",
+              "border-my-black/80 flex flex-col gap-4 border-t px-4 py-6 lg:flex-row lg:items-center lg:justify-between",
               index === experience.length - 1 && "border-b",
             )}
           >
