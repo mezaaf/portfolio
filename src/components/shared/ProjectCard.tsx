@@ -64,7 +64,7 @@ export const ProjectCard = ({
 export const ProjectCardSkeleton = () => {
   return (
     <Card className="overflow-hidden bg-transparent px-0 pt-0 shadow-none! ring-0">
-      <CardContent className="bg-my-black relative h-fit p-0">
+      <CardContent className="relative h-fit p-0">
         <Skeleton className="h-96 w-full" />
         <Skeleton className="absolute top-4 left-4 h-6 w-20 rounded-full" />
       </CardContent>

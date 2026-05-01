@@ -1,13 +1,18 @@
 "use client";
-import {
-  RESUME_DOWNLOAD_FILE_NAME,
-  RESUME_DOWNLOAD_URL,
-} from "@/constants/generalConstant";
 import { cn } from "@/lib/utils";
-import { CloudDownload, Code2Icon } from "lucide-react";
+import { ArrowRightIcon, Code2Icon, MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { buttonVariants } from "../ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -40,16 +45,52 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-2">
           <Link
-            href={RESUME_DOWNLOAD_URL}
-            download={RESUME_DOWNLOAD_FILE_NAME}
+            href={"/contact"}
             className={cn(
               buttonVariants(),
-              "bg-my-black hidden rounded-full p-6 md:flex",
+              "bg-my-black hidden rounded-full p-6 text-lg md:flex md:text-xl xl:text-2xl",
             )}
           >
-            <CloudDownload />
-            DOWNLOAD CV
+            Get in touch
           </Link>
+          <Sheet>
+            <SheetTrigger className="cursor-pointer md:hidden">
+              <MenuIcon />
+            </SheetTrigger>
+            <SheetContent className="bg-my-black min-w-full!">
+              <SheetHeader className="hidden">
+                <SheetTitle />
+                <SheetDescription />
+              </SheetHeader>
+              <div className="flex h-full flex-col items-center justify-center gap-8">
+                {navItems.map((nav) => {
+                  const isActive = nav.href === pathname;
+                  return (
+                    <SheetClose key={nav.name} asChild>
+                      <Link
+                        href={nav.href}
+                        className={cn(
+                          "hover:text-my-white text-muted-foreground flex items-center gap-2 text-3xl font-medium transition-colors duration-300",
+                          isActive && "text-my-white",
+                        )}
+                      >
+                        {nav.name}
+                      </Link>
+                    </SheetClose>
+                  );
+                })}
+                <Link
+                  href={"/contact"}
+                  className={cn(
+                    buttonVariants(),
+                    "bg-my-white text-my-black hover:bg-my-white/90! rounded-full p-6 text-lg md:text-xl xl:text-2xl",
+                  )}
+                >
+                  Get in touch <ArrowRightIcon />
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
@@ -60,15 +101,15 @@ export default Navbar;
 
 const navItems = [
   {
-    name: "HOME",
+    name: "Home",
     href: "/",
   },
   {
-    name: "ABOUT",
+    name: "About",
     href: "/about",
   },
   {
-    name: "PROJECT",
+    name: "Project",
     href: "/projects",
   },
 ];
