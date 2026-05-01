@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import AboutSection from "../components/AboutSection";
-import ExperienceSection from "../components/ExperienceSection";
 import HeroSection from "../components/HeroSection";
 import MyApproachSection from "../components/MyApproachSection";
 import ProjectSection from "../components/ProjectSection";
@@ -16,7 +15,6 @@ const HomePage = () => {
     <main className="space-y-12 md:space-y-20">
       <HeroSection />
       <AboutSection />
-      <ExperienceSection />
       <ProjectSection />
       <MyApproachSection />
     </main>

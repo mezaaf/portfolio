@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto mt-10 flex min-h-[90vh] flex-col justify-center px-4 md:mt-20">
-      <div className="flex min-h-full w-full flex-col items-center justify-center gap-8 pb-8 lg:flex-row">
+    <section className="container mx-auto flex min-h-[90vh] flex-col justify-center px-4">
+      <div className="flex min-h-full w-full flex-col items-center justify-center gap-8 lg:flex-row">
         <div className="w-full">
-          <h1 className="text-center text-[2rem] leading-none font-medium md:text-[4rem] lg:text-left lg:text-[6rem]">
+          <h1 className="text-[4rem] leading-none font-medium md:text-[6rem] lg:text-left lg:text-[8rem]">
             Fullstack <br /> Developer
           </h1>
         </div>

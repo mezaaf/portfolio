@@ -25,7 +25,9 @@ export const ProjectCard = ({
           width={500}
           height={300}
           priority
-          className={cn("h-full w-full object-cover object-center")}
+          className={cn(
+            "h-full w-full object-cover object-center grayscale hover:grayscale-0",
+          )}
         />
         <Badge className="absolute top-4 left-4">{category}</Badge>
       </CardContent>

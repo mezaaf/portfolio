@@ -21,7 +21,7 @@ const AboutSection = () => {
         </div>
       </Link>
       <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
-        <Card className="bg-my-grey-3 border-my-black/30 justify-center shadow-none">
+        <Card className="bg-my-grey-2/90 border-my-black/30 justify-center shadow-none">
           <CardContent className="flex flex-col justify-center gap-1">
             <h4 className="text-[2.5rem] font-medium">Mezaaf</h4>
             <p className="text-my-black/80 text-[1rem] md:text-[1.25rem]">
@@ -32,13 +32,13 @@ const AboutSection = () => {
           </CardContent>
         </Card>
         <div className="flex flex-col gap-4">
-          <Card className="bg-my-grey-3 border-my-black/30 min-h-[calc(1/2*95%)] justify-center shadow-none">
+          <Card className="bg-my-grey-2/90 border-my-black/30 min-h-[calc(1/2*95%)] justify-center shadow-none">
             <CardContent className="flex flex-col justify-center gap-1">
               <h4 className="text-[2.5rem] font-medium">10+</h4>
               <p className="text-[1rem]">Projects Completed</p>
             </CardContent>
           </Card>
-          <Card className="bg-my-grey-3 border-my-black/30 min-h-[calc(1/2*95%)] justify-center shadow-none">
+          <Card className="bg-my-grey-2/90 border-my-black/30 min-h-[calc(1/2*95%)] justify-center shadow-none">
             <CardContent className="flex flex-col justify-center gap-1">
               <h4 className="text-[2.5rem] font-medium">2+</h4>
               <p className="text-[1rem]">Years of Experience</p>
