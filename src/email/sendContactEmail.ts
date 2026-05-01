@@ -1,4 +1,4 @@
-import { ContactFormSchema } from "@/features/home/forms/contact";
+import { ContactFormSchema } from "@/features/contact/forms/contact";
 import { resend } from "@/lib/resend";
 
 export const sendContactEmail = async (data: ContactFormSchema) => {
@@ -10,7 +10,8 @@ export const sendContactEmail = async (data: ContactFormSchema) => {
       <h3>Pesan Kontak Baru</h3>
       <p><b>Name:</b> ${data.name} </p>
       <p><b>Email:</b> ${data.email}</p>
-      <p><b>Message:</b></p>
+      <p><b>Phone:</b> ${data.phone}</p>
+      <p><b>Details:</b></p>
       <p>${data.message}</p>
     `,
   });

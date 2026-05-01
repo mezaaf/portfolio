@@ -24,11 +24,16 @@ const ContactForm = () => {
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="name">Name</FieldLabel>
+              <FieldLabel
+                htmlFor="name"
+                className="text-base md:text-lg xl:text-xl"
+              >
+                Name
+              </FieldLabel>
               <Input
                 id="name"
                 placeholder="Enter your name"
-                className="h-12"
+                className="h-12 text-sm md:text-base xl:text-lg"
                 {...field}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -40,12 +45,40 @@ const ContactForm = () => {
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="email">Email</FieldLabel>
+              <FieldLabel
+                htmlFor="email"
+                className="text-base md:text-lg xl:text-xl"
+              >
+                Mailling contact info
+              </FieldLabel>
               <Input
                 id="email"
                 type="email"
-                placeholder="email@example.com"
-                className="h-12"
+                placeholder="Email address"
+                className="h-12 text-sm md:text-base xl:text-lg"
+                {...field}
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
+        />
+        <Controller
+          name="phone"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel
+                htmlFor="phone"
+                className="text-base md:text-lg xl:text-xl"
+              >
+                Calling contact info
+              </FieldLabel>
+              <Input
+                id="phone"
+                type="number"
+                placeholder="Phone number"
+                className="h-12 text-sm md:text-base xl:text-lg"
+                onWheel={(e) => e.currentTarget.blur()}
                 {...field}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -57,11 +90,16 @@ const ContactForm = () => {
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="message">Message</FieldLabel>
+              <FieldLabel
+                htmlFor="message"
+                className="text-base md:text-lg xl:text-xl"
+              >
+                Details
+              </FieldLabel>
               <Textarea
                 id="message"
-                placeholder="Write your message..."
-                className="min-h-[100px]"
+                placeholder="Please describe your project or question..."
+                className="min-h-[100px] text-sm md:text-base xl:text-lg"
                 {...field}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -69,15 +107,18 @@ const ContactForm = () => {
           )}
         />
         <Field>
-          <Button disabled={isLoading} className="w-fit! group">
+          <Button
+            disabled={isLoading}
+            className="group bg-my-black rounded-full p-8 text-lg md:text-xl xl:text-2xl"
+          >
             {isLoading ? (
               <>
-                <Loader className="animate-spin" /> Sending...
+                <Loader className="size-5 animate-spin" /> Sending...
               </>
             ) : (
               <>
-                Send Now{" "}
-                <SendHorizonalIcon className="group-hover:-rotate-45 transition-transform duration-300 ease-in-out" />
+                Submit
+                <SendHorizonalIcon className="size-5 transition-transform duration-300 ease-in-out group-hover:-rotate-45" />
               </>
             )}
           </Button>
