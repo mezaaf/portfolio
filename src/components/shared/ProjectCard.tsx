@@ -17,8 +17,8 @@ export const ProjectCard = ({
   githubUrl,
 }: GetProjectsResponse[0]) => {
   return (
-    <Card className="overflow-hidden bg-transparent px-0 pt-0 shadow-none! ring-0">
-      <CardContent className="bg-my-black relative h-fit p-0">
+    <Card className="overflow-hidden bg-transparent px-0 pt-0 shadow-none! ring-0 transition-transform duration-300 ease-in-out hover:scale-98">
+      <CardContent className="relative h-fit p-0">
         <Image
           src={imageUrl}
           alt={title}
@@ -26,7 +26,7 @@ export const ProjectCard = ({
           height={300}
           priority
           className={cn(
-            "h-full w-full object-cover object-center grayscale hover:grayscale-0",
+            "w-full object-cover object-center grayscale transition-all duration-300 hover:grayscale-0",
           )}
         />
         <Badge className="absolute top-4 left-4">{category}</Badge>

@@ -12,7 +12,7 @@ const ProjectList = () => {
     input: {},
   });
   return (
-    <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
+    <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
       <Activity mode={isLoading ? "hidden" : "visible"}>
         {data?.map((item) => (
           <ProjectCard

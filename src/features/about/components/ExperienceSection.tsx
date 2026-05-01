@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 const ExperienceSection = () => {
   return (
     <section className="container mx-auto space-y-12 px-4 py-12">
-      <h1 className="text-center text-[2rem] leading-none font-medium md:text-[3rem] lg:text-left lg:text-[5rem]">
+      <h1 className="text-[2rem] leading-none font-medium md:text-[3rem] lg:text-[5rem]">
         Experience.
       </h1>
       <div className="flex w-full flex-col">

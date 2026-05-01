@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="container mx-auto flex min-h-[90vh] flex-col justify-center px-4">
       <div className="flex min-h-full w-full flex-col items-center justify-center gap-8 lg:flex-row">
         <div className="w-full">
-          <h1 className="text-[4rem] leading-none font-medium md:text-[6rem] lg:text-left lg:text-[8rem]">
+          <h1 className="text-center text-[4rem] leading-none font-medium md:text-[6rem] lg:text-left lg:text-[8rem]">
             Fullstack <br /> Developer
           </h1>
         </div>

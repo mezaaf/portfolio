@@ -18,7 +18,7 @@ const ProjectSection = () => {
   return (
     <section className="container mx-auto space-y-12 px-4">
       <div className="flex flex-col gap-2">
-        <h1 className="text-center text-[2rem] leading-none font-medium md:text-[3rem] lg:text-left lg:text-[5rem]">
+        <h1 className="text-[2rem] leading-none font-medium md:text-[3rem] lg:text-[5rem]">
           Projects.
         </h1>
         <h6 className="text-my-black/80 font-medium md:text-lg">

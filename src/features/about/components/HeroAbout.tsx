@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HeroAbout = () => {
   return (
-    <section className="container mx-auto grid grid-cols-12 gap-4 px-4 pt-12">
+    <section className="container mx-auto grid grid-cols-12 gap-4 px-4 pt-12 md:pt-24">
       <div className="col-span-full md:col-span-4">
         <Card className="bg-my-black text-my-white border-none shadow-none!">
           <CardHeader>

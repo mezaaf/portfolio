@@ -69,6 +69,6 @@ const navItems = [
   },
   {
     name: "PROJECT",
-    href: "/project",
+    href: "/projects",
   },
 ];
